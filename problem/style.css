@@ -1,0 +1,147 @@
+header {background-color: #007765;
+    width: 100%;
+    max-width: 1219px;
+    max-height: 84px;
+    padding: 0;
+    margin: 0 auto;
+    position: fixed;
+    left: 147px;
+}
+.cont {
+    font-family: Roboto, sans-serif;
+    width: 100%;
+    max-width: 1219px;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+.logo{float: left;
+    padding-top: 20px;
+    padding-left: 55px;
+    margin-bottom: 19px;
+}
+nav {float: right;}
+nav ul {
+    padding: 10;
+    list-style: none;
+    padding-right: 54px;
+    position: relative;
+    top: 11px;
+  }
+  nav li {display: inline-block;
+    color: white;
+    font-size: 24px;
+}
+.cont:after {
+    content: "";
+    display: table;
+    clear: both;
+} 
+  .hero {
+    margin-left: 139px;
+    margin-right: 139px;
+    padding-top: 128px;
+    padding-bottom: 128px;
+    background-image: url('img/fon1.png');
+    background-size: cover;
+    background-position: center center;
+  }
+  
+  .hero__message {
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 72px;
+    line-height: 56px;
+    text-align: center;
+    color: #fff;
+  }
+  .g1 {color: #007765;
+    font-size: 64px;
+    width: 100%;
+    max-width: 1107px;
+    max-height: 75px;
+    margin-top: 48px;
+}
+.text{
+    font-size: 32px;
+    margin-bottom: 92px;
+    margin-left: 55px;
+    margin-right: 54px;
+}
+.container {
+    box-sizing: border-box;
+    max-width: 1219px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+  
+  .all {
+    margin-left: 128px;
+    margin-right: 128px;
+    padding-top: 128px;
+    padding-bottom: 128px;
+    background-image: url('img/fon2.png');
+    background-size: cover;
+    background-position: center center;
+  }
+  
+  .message {
+    font-family: Roboto, sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 56px;
+    text-align: center;
+    color: #fff;
+  }
+.intro {color: #007765;
+    font-size: 64px;
+  }
+.img{float:left;
+    position: relative;
+    left: 40px;
+}
+.txt{font-size:32px;
+    margin-left: 40px;
+    margin-right: 50px;
+}
+.prb {font-size:32px;
+    position: relative;
+    left: 80px;
+    margin-right: 80px;
+}
+.tm {color: #007765;
+    font-size: 64px;
+}
+.team1{float: inline-start;}
+.team1, .team2, .team3, .team4, .team5, .team6 {position: relative;
+    left: 55px;
+    top: 32px;
+}
+.bot{
+    font-family: Roboto, sans-serif;
+    width: 100%;
+    max-width: 1219px;
+    padding: 0 15px;
+    margin: 0 auto;
+    background-color: #EEEEEE;
+}
+.bottom{
+    font-family: Roboto, sans-serif;
+    width: 100%;
+    max-width: 1219px;
+    padding-top: 48px;
+    padding-bottom: 64px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #333333;
+}
+.clich{
+    font-size: 18px;
+    color: white;
+    width: 540px;
+    height: 64px;
+    margin-left: auto;
+    margin-right: auto;
+}
