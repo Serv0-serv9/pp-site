@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "iPhone 15 Pro",
+        "price": 99990,
+        "image": "img/iphone.jpg",
+        "description": "Новый iPhone 15 Pro с революционным дизайном и мощным процессором.",
+        "category": "Смартфоны",
+        "inStock": true,
+        "features": ["6.1\" OLED дисплей", "A17 Pro chip", "48MP камера", "Titanium корпус"]
+    }, 
+    {
+        "id": 2,
+        "name": "MacBook Air M2",
+        "price": 129990,
+        "image":"img/mac.jpg",
+        "description": "Невероятно тонкий и мощный ноутбук с чипом M2.",
+        "category": "Ноутбуки",
+        "inStock": true,
+        "features": ["13.6\" Liquid Retina", "M2 chip", "18h battery", "8GB RAM"]
+    },
+    {
+        "id": 3,
+        "name": "AirPods Pro",
+        "price": 24990,
+        "image":"img/pods.jpg",
+        "description": "Наушники с шумоподавлением и премиальным звуком.",
+        "category": "Аксессуары",
+        "inStock": true,
+        "features": ["Шумоподавление", "Пространственное аудио", "6h работы", "Case"]
+    },
+    {
+        "id": 4,
+        "name": "Apple Watch Series 9",
+        "price": 41990,
+        "image":"img/watch.jpg",
+        "description": "Умные часы с передовыми функциями для здоровья.",
+        "category": "Гаджеты",
+        "inStock": false,
+        "features": ["45mm display", "ECG", "GPS", "Water resistant"]
+    }
+]

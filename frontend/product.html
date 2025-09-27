@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курсовой проект магазин - Товар</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">Курсовой проект магазин</a>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Главная</a>
+                    <a href="cart.html" class="nav-link cart-link">
+                        Корзина <span id="cart-count">0</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Контейнер для товара -->
+            <div id="product-detail">
+                <!-- Сюда будет загружен товар -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Курсовой проект магазин</p>
+        </div>
+    </footer>
+
+    <script src="js/product.js"></script>
+    
+    <!-- Скрипт для отладки -->
+    <script>
+        // Добавляем отладочную информацию
+        console.log('Page URL:', window.location.href);
+        console.log('URL params:', new URLSearchParams(window.location.search).toString());
+    </script>
+</body>
+</html>
