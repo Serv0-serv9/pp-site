@@ -46,7 +46,7 @@ class CartService {
         // Обновляем счетчик товаров в интерфейсе
         this.updateCartCount();
         // Показываем уведомление об успешном добавлении
-        this.showNotification('Товар добавлен в корзину!');
+        this.showNotification('Ваша заявка принята на рассмотрение!');
     }
 
     // Обновление счетчика товаров в корзине (в шапке сайта)
@@ -111,7 +111,7 @@ class CartPage {
         const cart = CartService.getCart();
         // Находим элементы DOM
         const container = document.getElementById('cart-items'); // Контейнер для товаров
-        const totalElement = document.getElementById('cart-total'); // Элемент для общей суммы
+        //const totalElement = document.getElementById('cart-total'); // Элемент для общей суммы
         const checkoutBtn = document.getElementById('checkout-btn'); // Кнопка оформления заказа
 
         // Если контейнер не найден - выходим
@@ -123,13 +123,13 @@ class CartPage {
             container.innerHTML = `
                 <div class="empty-cart">
                     <div style="font-size: 4rem; margin-bottom: 1rem;">🛒</div>
-                    <h3>Корзина пуста</h3>
-                    <a href="index.html" class="btn btn-primary" style="margin-top: 1rem;">Перейти к покупкам</a>
+                    <h3>У вас нет активных заявок</h3>
+                    <a href="index.html" class="btn btn-primary" style="margin-top: 1rem;">Перейти к вакансиям</a>
                 </div>
             `;
             
             // Обновляем общую сумму и кнопку оформления
-            if (totalElement) totalElement.textContent = 'Итого: 0 руб.';
+            //if (totalElement) totalElement.textContent = 'Итого: 0 руб.';
             if (checkoutBtn) checkoutBtn.disabled = true; // Делаем кнопку неактивной
             return;
         }
