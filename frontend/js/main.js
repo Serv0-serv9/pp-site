@@ -57,7 +57,7 @@ class CartService {
         // Обновляем счетчик товаров в интерфейсе
         this.updateCartCount();
         // Показываем уведомление об успешном добавлении
-        this.showNotification('Товар добавлен в корзину!', 'success');
+        this.showNotification('Ваша заявка принята на рассмотрение!', 'success');
     }
 
     // Обновление счетчика товаров в корзине (отображается в шапке сайта)
@@ -125,14 +125,14 @@ class ProductRenderer {
                 <h3 class="product-title">${product.name}</h3>
                 
                 <!-- Цена товара с форматированием для русской локали -->
-                <div class="product-price">${product.price.toLocaleString()} лет</div>
+                <div class="product-price">${product.price.toLocaleString()} руб.</div>
                 
                 <!-- Описание товара -->
                 <p class="product-description">${product.description}</p>
                 
                 <!-- Кнопка для перехода к детальной странице товара -->
                 <button class="btn btn-primary" onclick="ProductRenderer.viewProduct(${product.id})">
-                    Откликнуться
+                    Подробнее
                 </button>
             </div>
         `;

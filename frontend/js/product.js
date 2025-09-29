@@ -111,7 +111,7 @@ class CartService {
         
         this.saveCart(cart);
         this.updateCartCount();
-        this.showNotification('Товар добавлен в корзину!', 'success');
+        this.showNotification('Ваша заявка принята на рассмотрение!', 'success');
     }
 
     static updateCartCount() {
@@ -171,7 +171,7 @@ class ProductDetailRenderer {
             console.log('Product ID from URL:', productId);
 
             if (!productId || isNaN(productId)) {
-                throw new Error('Неверный ID товара');
+                throw new Error('Неверный ID заявки');
             }
 
             // Загружаем товар
@@ -193,7 +193,7 @@ class ProductDetailRenderer {
         return `
             <div class="loading-container">
                 <div class="loading-spinner"></div>
-                <p>Загрузка товара...</p>
+                <p>Загрузка заявки...</p>
                 <button onclick="location.reload()" class="btn btn-primary">Обновить страницу</button>
             </div>
         `;
@@ -202,10 +202,10 @@ class ProductDetailRenderer {
     static getErrorHTML(errorMessage) {
         return `
             <div class="error-container">
-                <h2>Ошибка загрузки товара</h2>
+                <h2>Ошибка загрузки заявки</h2>
                 <p>${errorMessage}</p>
                 <div style="margin-top: 20px;">
-                    <a href="index.html" class="btn btn-primary">Вернуться в Курсовой проект магазин</a>
+                    <a href="index.html" class="btn btn-primary">Вернуться</a>
                     <button onclick="location.reload()" class="btn btn-secondary">Попробовать снова</button>
                 </div>
             </div>
@@ -223,12 +223,12 @@ class ProductDetailRenderer {
                     <div class="product-detail-price">${product.price.toLocaleString('ru-RU')} руб.</div>
                     
                     <div class="stock-status ${product.inStock ? 'in-stock' : 'out-of-stock'}">
-                        ${product.inStock ? '✓ В наличии' : '✗ Нет в наличии'}
+                        ${product.inStock ? '✓ Есть места' : '✗ Нет мест'}
                     </div>
                     
                     <p class="product-detail-description">${product.description}</p>
                     
-                    <h3>Характеристики:</h3>
+                    <h3>Требования:</h3>
                     <ul class="features-list">
                         ${product.features.map(feature => `<li>${feature}</li>`).join('')}
                     </ul>
@@ -237,9 +237,9 @@ class ProductDetailRenderer {
                         <button class="btn btn-success add-to-cart-btn" 
                                 ${!product.inStock ? 'disabled' : ''}
                                 data-product-id="${product.id}">
-                            ${product.inStock ? '🛒 Добавить в корзину' : '❌ Товар закончился'}
+                            ${product.inStock ? '📋 Отправить заявку' : '❌ Нет мест'}
                         </button>
-                        <a href="index.html" class="btn btn-primary">← Назад к товарам</a>
+                        <a href="index.html" class="btn btn-primary">← Назад к вакансиям</a>
                     </div>
                 </div>
             </div>
@@ -247,21 +247,14 @@ class ProductDetailRenderer {
     }
 
     static addEventListeners(product) {
-        // Обработчик кнопки "Добавить в корзину"
+        // Обработчик кнопки "Отправить заявку"
         const addToCartBtn = document.querySelector('.add-to-cart-btn');
         if (addToCartBtn) {
             addToCartBtn.addEventListener('click', () => {
                 CartService.addToCart(product);
-                
                 // Визуальная обратная связь
-                addToCartBtn.textContent = '✓ Добавлено!';
+                addToCartBtn.textContent = '✓ Отправлено!';
                 addToCartBtn.style.background = '#27ae60';
-                setTimeout(() => {
-                    if (product.inStock) {
-                        addToCartBtn.textContent = '🛒 Добавить в корзину';
-                        addToCartBtn.style.background = '';
-                    }
-                }, 2000);
             });
         }
     }

@@ -122,7 +122,7 @@ class CartPage {
             // Показываем сообщение о пустой корзине
             container.innerHTML = `
                 <div class="empty-cart">
-                    <div style="font-size: 4rem; margin-bottom: 1rem;">🛒</div>
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">📋</div>
                     <h3>У вас нет активных заявок</h3>
                     <a href="index.html" class="btn btn-primary" style="margin-top: 1rem;">Перейти к вакансиям</a>
                 </div>
@@ -149,21 +149,21 @@ class CartPage {
                     <!-- Информация о товаре -->
                     <div class="cart-item-info">
                         <h3>${item.name || 'Неизвестный товар'}</h3>
-                        <div class="cart-item-price">${(item.price || 0).toLocaleString('ru-RU')} руб. × ${item.quantity || 1}</div>
-                        <div class="item-total">Сумма: ${itemTotal.toLocaleString('ru-RU')} руб.</div>
+                        <div class="cart-item-price">${(item.price).toLocaleString('ru-RU')} руб.</div>
+                        <div class="item-total">${(item.category).toLocaleString('ru-RU')}</div>
                     </div>
                     <!-- Элементы управления -->
                     <div class="cart-item-controls">
                         <div class="quantity-controls">
-                            <!-- Кнопка уменьшения количества -->
-                            <button class="quantity-btn" onclick="CartPage.updateQuantity(${item.id}, -1)">−</button>
-                            <!-- Отображение текущего количества -->
-                            <span class="quantity-display">${item.quantity || 1}</span>
-                            <!-- Кнопка увеличения количества -->
-                            <button class="quantity-btn" onclick="CartPage.updateQuantity(${item.id}, 1)">+</button>
+                            <!-- Кнопка уменьшения количества 
+                            <button class="quantity-btn" onclick="CartPage.updateQuantity(${item.id}, -1)">−</button> -->
+                            <!-- Отображение текущего количества
+                            <span class="quantity-display">${item.quantity || 1}</span>  -->
+                            <!-- Кнопка увеличения количества 
+                            <button class="quantity-btn" onclick="CartPage.updateQuantity(${item.id}, 1)">+</button> -->
                         </div>
                         <!-- Кнопка удаления товара -->
-                        <button class="btn btn-danger" onclick="CartPage.removeItem(${item.id})">🗑️ Удалить</button>
+                        <button class="btn btn-danger" onclick="CartPage.removeItem(${item.id})">🗑️ Отменить</button>
                     </div>
                 </div>
             `;
