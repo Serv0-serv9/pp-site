@@ -285,8 +285,9 @@ class CartPage {
 }
 
 // Инициализация при полной загрузке DOM
-document.addEventListener('DOMContentLoaded', () => CartPage.init());
+//document.addEventListener('DOMContentLoaded', () => CartPage.init());
 
 // Делаем классы доступными глобально для вызова из HTML
 window.CartPage = CartPage;
 window.CartService = CartService;
+module.exports = CartService;
