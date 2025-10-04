@@ -1,4 +1,4 @@
-const CartService = require('./cart');
+const CartService = require('../frontend/js/cart');
 
 // мок документа и localStorage, если нужно
 describe('CartService', () => {
