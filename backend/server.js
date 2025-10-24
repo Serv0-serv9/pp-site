@@ -8,7 +8,9 @@ const path = require('path'); // Модуль для работы с путям�
 const app = express();
 // Порт, на котором будет запущен сервер
 const PORT = 3000;
-
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend', 'greetings.html')); // здесь укажите имя вашего HTML-файла
+});
 // Настройка middleware
 app.use(cors()); // Разрешаем CORS для всех запросов
 app.use(express.json()); // Парсинг JSON данных из тела запроса
@@ -51,7 +53,6 @@ app.get('/api/products/:id', (req, res) => {
         if (!product) {
             return res.status(404).json({ error: 'Товар не найден' });
         }
-        
         // Отправляем найденный товар
         res.json(product);
     } catch (error) {

@@ -111,7 +111,7 @@ class CartPage {
         const cart = CartService.getCart();
         // Находим элементы DOM
         const container = document.getElementById('cart-items'); // Контейнер для товаров
-        //const totalElement = document.getElementById('cart-total'); // Элемент для общей суммы
+        const totalElement = document.getElementById('cart-total'); // Элемент для общей суммы
         const checkoutBtn = document.getElementById('checkout-btn'); // Кнопка оформления заказа
 
         // Если контейнер не найден - выходим
@@ -129,7 +129,7 @@ class CartPage {
             `;
             
             // Обновляем общую сумму и кнопку оформления
-            //if (totalElement) totalElement.textContent = 'Итого: 0 руб.';
+            if (totalElement) totalElement.textContent = 'Итого: 0 руб.';
             if (checkoutBtn) checkoutBtn.disabled = true; // Делаем кнопку неактивной
             return;
         }
@@ -154,14 +154,6 @@ class CartPage {
                     </div>
                     <!-- Элементы управления -->
                     <div class="cart-item-controls">
-                        <div class="quantity-controls">
-                            <!-- Кнопка уменьшения количества 
-                            <button class="quantity-btn" onclick="CartPage.updateQuantity(${item.id}, -1)">−</button> -->
-                            <!-- Отображение текущего количества
-                            <span class="quantity-display">${item.quantity || 1}</span>  -->
-                            <!-- Кнопка увеличения количества 
-                            <button class="quantity-btn" onclick="CartPage.updateQuantity(${item.id}, 1)">+</button> -->
-                        </div>
                         <!-- Кнопка удаления товара -->
                         <button class="btn btn-danger" onclick="CartPage.removeItem(${item.id})">🗑️ Отменить</button>
                     </div>
@@ -224,7 +216,7 @@ class CartPage {
         
         // Показываем уведомление об удалении
         if (item) {
-            this.showNotification(`Товар "${item.name}" удален из корзины`);
+            this.showNotification(`Отклик на вакансию "${item.name}" отменен`);
         }
     }
 
@@ -285,9 +277,8 @@ class CartPage {
 }
 
 // Инициализация при полной загрузке DOM
-//document.addEventListener('DOMContentLoaded', () => CartPage.init());
+document.addEventListener('DOMContentLoaded', () => CartPage.init());
 
 // Делаем классы доступными глобально для вызова из HTML
 window.CartPage = CartPage;
 window.CartService = CartService;
-module.exports = CartService;
